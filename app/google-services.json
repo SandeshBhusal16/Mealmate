@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "425949056056",
+    "project_id": "mealmate-f7687",
+    "storage_bucket": "mealmate-f7687.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425949056056:android:a32ce25f347c32c01f6acd",
+        "android_client_info": {
+          "package_name": "edu.ismt.sandeshbhusal.mealmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEWxlvBFY9O7TPaM330UAE7Cvty-Q3gI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

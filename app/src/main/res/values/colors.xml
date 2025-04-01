@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#4CAF50</color>
+    <color name="primary_variant">#388E3C</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_variant">#F5F5F5</color>
+    <color name="primary_light">#1A4CAF50</color> <!-- 10% opacity of primary -->
+    <color name="ripple_color">#0F000000</color>
+    <!-- Secondary Colors -->
+    <color name="secondary">#81C784</color>
+    <color name="on_secondary">#000000</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#A5D6A7</color>
+
+    <!-- Background and Surface -->
+    <color name="background">#F1F8E9</color>
+    <color name="surface">#C8E6C9</color>
+    <color name="on_surface">#2E2E2E</color>
+    <color name="on_surface_variant">#4E4E4E</color>
+
+    <!-- State Colors -->
+    <color name="error">#D32F2F</color>
+    <color name="success">#2E7D32</color>
+
+    <!-- Neutral Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="breakfastYellow">#FFD54F</color>
+    <color name="lunchGreen">#66BB6A</color>
+    <color name="dinnerOrange">#FFB74D</color>
+
+    <color name="textDarkBrown">#2E2E2E</color>
+    <color name="textLightBeige">#F1F8E9</color>
+
+    <color name="chip_selector">#C8E6C9</color>
+</resources>

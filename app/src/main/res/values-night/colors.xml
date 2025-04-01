@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors (Darker Tones) -->
+    <color name="primary">#2E7D32</color> <!-- Deep Forest Green -->
+    <color name="primary_variant">#1B5E20</color> <!-- Darker Green -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_variant">#C8E6C9</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#66BB6A</color> <!-- Soft Natural Green -->
+    <color name="on_secondary">#000000</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#81C784</color> <!-- Light Green Accent -->
+
+    <!-- Background and Surface -->
+    <color name="background">#121212</color> <!-- True Black for AMOLED -->
+    <color name="surface">#1B1B1B</color> <!-- Dark Grey Surface -->
+    <color name="on_surface">#E8F5E9</color> <!-- Soft Greenish White -->
+    <color name="on_surface_variant">#A5D6A7</color> <!-- Muted Green Variant -->
+
+    <!-- State Colors -->
+    <color name="error">#D32F2F</color>
+    <color name="success">#4CAF50</color>
+
+    <!-- Neutral Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="breakfastYellow">#FDD835</color> <!-- Muted Yellow -->
+    <color name="lunchGreen">#388E3C</color> <!-- Deep Green -->
+    <color name="dinnerOrange">#F57C00</color> <!-- Burnt Orange -->
+
+    <color name="textDarkBrown">#A1887F</color>  <!-- Muted Brown for better contrast -->
+    <color name="textLightBeige">#E8F5E9</color> <!-- Lightened Soft Greenish Beige -->
+    <color name="chip_selector">#2E7D32</color> <!-- Darker Green for Selection -->
+</resources>

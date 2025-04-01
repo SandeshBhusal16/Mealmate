@@ -1,0 +1,118 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- RecyclerView for Grocery Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- Sub-FAB: Add Item -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_marginBottom="14dp"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/fab_import_items"
+        android:layout_marginEnd="24dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/primary"
+        app:tint="@color/white" />
+
+    <!-- Label: Add Item -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/label_add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Item"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_alignTop="@id/fab_add_item"
+        android:layout_toStartOf="@id/fab_add_item"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:background="@drawable/label_background"
+        android:padding="4dp" />
+
+    <!-- Sub-FAB: Import Items -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_import_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/fab_delegate_shopping"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_import"
+        app:backgroundTint="@color/secondary"
+        app:tint="@color/white" />
+
+    <!-- Label: Import Items -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/label_import_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Import From Meal Plan"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_alignTop="@id/fab_import_items"
+        android:layout_toStartOf="@id/fab_import_items"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/label_background"
+        android:padding="4dp" />
+
+    <!-- Sub-FAB: Delegate Shopping -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_delegate_shopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="95dp"
+        android:layout_marginEnd="24dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_delegate"
+    app:backgroundTint="@color/tertiary"
+    app:tint="@color/white" />
+
+    <!-- Label: Delegate Shopping -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/label_delegate_shopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delegate Shopping"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginTop="11dp"
+        android:layout_alignTop="@id/fab_delegate_shopping"
+        android:layout_toStartOf="@id/fab_delegate_shopping"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:background="@drawable/label_background"
+        android:padding="4dp" />
+
+    <!-- Main FAB: Expandable -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="24dp"
+        app:tint="@color/white"
+        android:src="@drawable/ic_action_shop"
+        app:backgroundTint="@color/primary" />
+
+</RelativeLayout>
