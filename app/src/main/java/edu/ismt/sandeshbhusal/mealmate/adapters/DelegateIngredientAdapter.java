@@ -22,7 +22,7 @@ public class DelegateIngredientAdapter extends RecyclerView.Adapter<DelegateIngr
     @NonNull
     @Override
     public IngredientViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.delegate_item_ingredient, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(edu.ismt.sandeshbhusal.mealmate.R.layout.delegate_item_ingredient, parent, false);
         return new IngredientViewHolder(view);
     }
 
@@ -78,8 +78,8 @@ public class DelegateIngredientAdapter extends RecyclerView.Adapter<DelegateIngr
 
         public IngredientViewHolder(@NonNull View itemView) {
             super(itemView);
-            checkBoxIngredient = itemView.findViewById(R.id.checkBoxIngredient);
-            textViewIngredientName = itemView.findViewById(R.id.textViewIngredientName);
+            //checkBoxIngredient = itemView.findViewById(R.id.checkBoxIngredient);
+            //textViewIngredientName = itemView.findViewById(R.id.textViewIngredientName);
         }
     }
 }

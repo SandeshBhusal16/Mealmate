@@ -6,25 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:background="@color/primary_variant"
-        android:padding="10dp">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/logo"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textFontWeight="700"
-            android:textColor="@color/white"
-            android:text="WELCOME TO MEALMATE"/>
 
-    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,17 +18,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+           >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_variant"
+                android:padding="10dp">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/logo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text="WELCOME TO MEALMATE"
+                    android:elevation="8dp"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
             <!-- Today's Meals Section -->
+
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:cardCornerRadius="16dp"
+                android:layout_margin="20dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -101,6 +103,7 @@
                 android:text="View Weekly Plan"
                 android:textFontWeight="700"
                 android:textSize="16sp"
+                android:layout_margin="20dp"
                 app:cornerRadius="24dp"
                 app:icon="@drawable/baseline_calendar_month_24"
                 android:backgroundTint="@color/primary_variant"
@@ -113,6 +116,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:paddingTop="32dp"
+                android:layout_margin="20dp"
                 android:paddingBottom="16dp">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -175,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
+                android:layout_margin="20dp"
                 app:cardElevation="4dp"
                 android:layout_marginTop="8dp"
                 app:strokeColor="@color/primary"
@@ -184,6 +189,7 @@
                     android:id="@+id/favStoresRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:padding="12dp"
                     android:clipToPadding="false"/>
             </com.google.android.material.card.MaterialCardView>

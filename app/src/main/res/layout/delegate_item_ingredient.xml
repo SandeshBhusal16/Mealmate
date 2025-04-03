@@ -4,45 +4,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    android:layout_marginBottom="8dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical">
+        android:padding="16dp">
 
         <CheckBox
-            android:id="@+id/checkBoxIngredient"
+            android:id="@+id/cbSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:theme="@style/Widget.AppCompat.CompoundButton.CheckBox" />
+            android:layout_marginEnd="16dp" />
 
         <TextView
-            android:id="@+id/textViewIngredientName"
-            android:layout_width="204dp"
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-medium"
-            android:text="Ingredient Name"
-            android:textColor="@android:color/black"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextPrice"
-            android:layout_width="80dp"
+            android:id="@+id/etQuantity"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:hint="Qty"
+            android:inputType="number"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:hint="Price"
-            android:inputType="numberDecimal"
-            android:background="@android:drawable/edit_text"
-            android:padding="8dp"
-            android:textSize="14sp"
-            android:gravity="end" />
+            android:inputType="numberDecimal" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

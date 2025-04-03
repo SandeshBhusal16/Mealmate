@@ -129,15 +129,31 @@ public class GrokDelegateActivity extends AppCompatActivity {
     private List<Contact> fetchContacts() {
         List<Contact> contacts = new ArrayList<>();
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
-            Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+            // Query for phone numbers
+            Cursor phoneCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                     null, null, null, null);
-            if (cursor != null) {
-                while (cursor.moveToNext()) {
-                    String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                    String number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    contacts.add(new Contact(name, number));
+            if (phoneCursor != null) {
+                while (phoneCursor.moveToNext()) {
+                    String name = phoneCursor.getString(phoneCursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                    String number = phoneCursor.getString(phoneCursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    String email = null;
+
+                    // Query for email
+                    Cursor emailCursor = getContentResolver().query(
+                            ContactsContract.CommonDataKinds.Email.CONTENT_URI,
+                            null,
+                            ContactsContract.CommonDataKinds.Email.CONTACT_ID + "=?",
+                            new String[]{phoneCursor.getString(phoneCursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.CONTACT_ID))},
+                            null);
+
+                    if (emailCursor != null && emailCursor.moveToFirst()) {
+                        email = emailCursor.getString(emailCursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Email.ADDRESS));
+                        emailCursor.close();
+                    }
+
+                    contacts.add(new Contact(name, number, email));
                 }
-                cursor.close();
+                phoneCursor.close();
             }
         }
         return contacts;
@@ -183,7 +199,7 @@ public class GrokDelegateActivity extends AppCompatActivity {
             return;
         }
 
-        StringBuilder message = new StringBuilder("Will you shop for me? Here’s the list: [");
+        StringBuilder message = new StringBuilder("Will you shop for me? Here's the list: [");
         float totalPrice = 0;
         for (GrokIngredient ingredient : selectedIngredients) {
             message.append(ingredient.name).append(" (").append(ingredient.category).append("): $")

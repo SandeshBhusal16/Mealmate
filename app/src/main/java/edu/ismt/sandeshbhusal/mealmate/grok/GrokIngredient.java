@@ -1,11 +1,11 @@
 package edu.ismt.sandeshbhusal.mealmate.grok;
 
-class GrokIngredient {
-    String name, date, category;
-    boolean isPurchased;
-    float price;
+public class GrokIngredient {
+    public String name, date, category;
+    public boolean isPurchased;
+    public float price;
 
-    GrokIngredient(String name, String date, String category, boolean isPurchased, float price) {
+    public GrokIngredient(String name, String date, String category, boolean isPurchased, float price) {
         this.name = name;
         this.date = date;
         this.category = category;

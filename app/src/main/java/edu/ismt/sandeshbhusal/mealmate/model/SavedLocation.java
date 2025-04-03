@@ -6,6 +6,11 @@ import java.util.List;
 
 public class SavedLocation implements Parcelable {
     private String name;
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     private String imageUrl;
     private double latitude;
     private double longitude;

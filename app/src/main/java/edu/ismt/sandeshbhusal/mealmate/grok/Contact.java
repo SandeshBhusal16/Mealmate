@@ -1,13 +1,13 @@
 package edu.ismt.sandeshbhusal.mealmate.grok;
 
-
-
 public class Contact {
-    String name;
-    String number;
+    public String name;
+    public String number;
+    public String email;
 
-    public Contact(String name, String number) {
+    public Contact(String name, String number, String email) {
         this.name = name;
         this.number = number;
+        this.email = email;
     }
 }

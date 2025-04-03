@@ -9,8 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -319,6 +321,39 @@ public class GroceryDatabaseHelper extends SQLiteOpenHelper {
         return hasData;
     }
 
+
+    public Map<String, List<String>> getWeeklyUnpurchasedMeals() {
+        Map<String, List<String>> mealsMap = new LinkedHashMap<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT " + COLUMN_CATEGORY + ", " + COLUMN_NAME +
+                " FROM " + TABLE_GROCERY +
+                " WHERE " + COLUMN_DATE + " BETWEEN ? AND ?" +
+                " AND " + COLUMN_IS_PURCHASED + " = 0" +
+                " ORDER BY " + COLUMN_CATEGORY;
+
+        Cursor cursor = db.rawQuery(query, new String[]{getTodayDate(), getDateAfterDays(7)});
+
+        while (cursor.moveToNext()) {
+            String meal = cursor.getString(0);
+            String ingredient = cursor.getString(1);
+
+            if (!mealsMap.containsKey(meal)) {
+                mealsMap.put(meal, new ArrayList<>());
+            }
+            mealsMap.get(meal).add(ingredient);
+        }
+        cursor.close();
+        return mealsMap;
+    }
+
+
+    private String getDateAfterDays(int days) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_YEAR, days);
+        return sdf.format(cal.getTime());
+}
 
 
 }
